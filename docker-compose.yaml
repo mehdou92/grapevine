@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  nginx:
+    container_name: Grapewine_Nginx
+    environment:
+      - SYMFONY_ENV=dev
+    image: "nginx:latest"
+    build: docker/nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./:/usr/share/nginx/html
